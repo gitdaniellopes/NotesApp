@@ -6,6 +6,7 @@ import br.com.notesapp.feature_note.data.data_source.NoteDatabase
 import br.com.notesapp.feature_note.data.data_source.NoteDatabase.Companion.DATABASE_NAME
 import br.com.notesapp.feature_note.data.repository.NoteRepositoryImpl
 import br.com.notesapp.feature_note.domain.repository.NoteRepository
+import br.com.notesapp.feature_note.domain.use_case.AddNoteUseCase
 import br.com.notesapp.feature_note.domain.use_case.DeleteNoteUseCase
 import br.com.notesapp.feature_note.domain.use_case.GetNotesUseCase
 import br.com.notesapp.feature_note.domain.use_case.NoteUseCases
@@ -41,7 +42,8 @@ object ApModule {
     fun provideNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(repository = repository),
-            deleteNoteUseCase = DeleteNoteUseCase(repository = repository)
+            deleteNoteUseCase = DeleteNoteUseCase(repository = repository),
+            addNoteUseCase = AddNoteUseCase(repository = repository)
         )
     }
 }
