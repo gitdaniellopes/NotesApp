@@ -5,5 +5,4 @@ class NoteUseCases(
     val deleteNoteUseCase: DeleteNoteUseCase,
     val addNoteUseCase: AddNoteUseCase,
     val getNoteByIdUseCase: GetNoteByIdUseCase
-) {
-}
+)

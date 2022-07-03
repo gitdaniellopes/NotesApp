@@ -90,7 +90,8 @@ fun NotesItem(
         ) {
             Icon(
                 imageVector = Icons.Default.Delete,
-                contentDescription = null
+                contentDescription = "Delete note",
+                tint = MaterialTheme.colors.onSurface
             )
         }
     }
@@ -100,13 +101,8 @@ fun NotesItem(
 @Preview(showBackground = true)
 fun NotesItemPreview() {
     NotesItem(
-        note = Note(
-            "daniel",
-            "daniek",
-            0,
-            Color.Black.hashCode()
-        )
-    ) {
-
-    }
+        note = Note("wewe", "dsdsd", 1, 123),
+        modifier = Modifier.fillMaxWidth(),
+        onDeleteClick = {}
+    )
 }

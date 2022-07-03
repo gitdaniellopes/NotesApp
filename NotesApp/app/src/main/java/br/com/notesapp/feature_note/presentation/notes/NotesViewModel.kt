@@ -16,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NotesViewModel @Inject constructor(
-    private val noteUseCases: NoteUseCases
+    private val noteUseCases: NoteUseCases,
 ) : ViewModel() {
 
     private val _state = mutableStateOf(NotesState())
@@ -35,7 +35,7 @@ class NotesViewModel @Inject constructor(
     fun onEvent(event: NotesEvent) {
         when (event) {
             is NotesEvent.Order -> {
-                if (state.value.noteOrder == event.noteOrder &&
+                if (state.value.noteOrder::class == event.noteOrder::class &&
                     state.value.noteOrder.orderType == event.noteOrder.orderType
                 ) {
                     return
